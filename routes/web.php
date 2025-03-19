@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -24,4 +25,7 @@ Route::controller(LoginController::class)->group(function() {
     Route::post('/logout', 'destroy')->name('login.destroy');
 });
 
-Route::get('/tela', [TelaController::class, 'index'])->name('tela');
+Route::controller(CarroController::class)->group(function() {
+    Route::get('/carros', 'index')->name('carros.index');
+
+});
