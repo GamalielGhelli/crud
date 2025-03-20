@@ -1,17 +1,28 @@
+@extends('Carros/MasterCarros')
+@section('content')
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
-  <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome:</th>
+      <th scope="col">Marca:</th>
+      <th scope="col">Ano de Criação:</th>
+      <th scope="col">Fipe:</th>
+      <th scope="col">Categoria:</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach ($carros as $carro )
+     <tr>
+      <td>{{ $carro->id }}</td>
+      <td>{{ $carro->nome }}</td>
+      <td>{{ $carro->marca }}</td>
+      <td>{{ $carro->ano_criacao }}</td>
+      <td>{{ $carro->fipe }}</td>
+      <td>{{ $carro->categoria->nome }}</td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+@endsection

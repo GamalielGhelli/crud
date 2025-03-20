@@ -4,7 +4,7 @@ use App\Http\Controllers\CarroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\TelaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +27,6 @@ Route::controller(LoginController::class)->group(function() {
 
 Route::controller(CarroController::class)->group(function() {
     Route::get('/carros', 'index')->name('carros.index');
+    Route::get('/criar', 'create')->name('carros.create');
 
 });
